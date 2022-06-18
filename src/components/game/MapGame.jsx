@@ -3,20 +3,20 @@ import { useEffect } from 'react'
 import { setCssVar } from '../tools/seterCssVar'
 
 const mapData = {
-    totalVerticalElements: 30,
-    totalHorizontalElements: 30,
-    verticalElements: 100,
-    horizontalProm: 100,
+    totalElementsX: 30,
+    totalElementsY: 10,
+    elementsX: 10,
+    porcentY: 100,
 }
 
 const MapGame = () => {
     function setVars () {
-        const { verticalElements, horizontalProm } = mapData
-        const gridMapWidth = document.getElementById( 'grid_map' ).clientWidth
-        const widthElement = gridMapWidth / verticalElements
+        const { elementsX, porcentY, totalElementsX } = mapData
+        const widthElement = window.innerWidth / elementsX
     
         setCssVar( '--width_elements', `${ widthElement }px` )
-        setCssVar( '--heigth_elements', `${ horizontalProm / 100 * widthElement }px` )
+        setCssVar( '--heigth_elements', `${ porcentY / 100 * widthElement }px` )
+        setCssVar( '--width_grid', `${ widthElement * totalElementsX }px` )
     }
     function createArrElemets ( cant ) {
         const arrAns = []
@@ -25,7 +25,9 @@ const MapGame = () => {
         }
         return arrAns
     }
-    const arrIdElements = createArrElemets( mapData.verticalElements )
+    const arrIdX = createArrElemets( mapData.totalElementsX )
+    const arrIdHorizontal = createArrElemets( mapData.totalElementsY )
+    console.log( arrIdHorizontal )
     useEffect( () => {
         setVars()
     }, [] )
@@ -33,10 +35,14 @@ const MapGame = () => {
         <div className='wrap_map' >
             <div className='grid_map' id='grid_map' >
                 {
-                    arrIdElements.map( id => {
-                        return(
-                            <div className='element_grid' id={ id } key={ id }></div>
-                        )
+                    arrIdHorizontal.map( idY => {
+                        console.log( 'idY' )
+                        arrIdX.map( idX => {
+                            console.log( 'idX' )
+                            return(
+                                <div className='element_grid' id={ idX } key={ idX }></div>
+                            )
+                        })
                     })
                 }
             </div>
