@@ -1,13 +1,14 @@
 .wrap_map{
     width: 100vw;
     height: 100vh;
+    overflow: scroll;
 }
 .grid_map{
     width: var(--width_grid);
     height: inherit;
 }
 .element_grid{
-    display: inline-block;
+    float: left;
     width: var(--width_elements);
     height: var(--heigth_elements);
     border: 1px solid black;
