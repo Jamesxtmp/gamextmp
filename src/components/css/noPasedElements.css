@@ -1,0 +1,24 @@
+.no-pased{
+    background-color: black;
+    position: absolute;
+}
+#noPasedTop{
+    top: 0;
+    height: calc( 50vh - 10px );
+    width: 100%;
+}
+#noPasedBottom{
+    bottom: 0;
+    height: calc( 50vh - 10px );
+    width: 100%;
+}
+#noPasedRigth{
+    right: 0;
+    width: calc( 50vw - 10px );
+    height: 100%;
+}
+#noPasedLeft{
+    left: 0;
+    width: calc( 50vw - 10px );
+    height: 100%;
+}

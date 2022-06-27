@@ -1,0 +1,33 @@
+body{
+    overflow: hidden;
+}
+.map-view{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    overflow: hidden;
+}
+.map{
+    width: 300vw;
+    height: 300vh;
+}
+.obstacle{
+    top: 50px;
+    left: 50px;
+    width: 5px;
+    height: 5px;
+    background-color: black;
+}
+.wrap-player{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.player{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
